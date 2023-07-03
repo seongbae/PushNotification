@@ -46,6 +46,8 @@ class GcmChannel extends PushChannel
             $data['data'] = $message->extra;
         }
 
+        $data['headers'] = '';
+
         return $data;
     }
 }

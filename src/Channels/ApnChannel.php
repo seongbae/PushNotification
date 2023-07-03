@@ -28,6 +28,7 @@ class ApnChannel extends PushChannel
                 'category' => $message->category,
                 'sound' => $message->sound,
             ],
+            'headers' => []
         ];
 
         if (! empty($message->extra)) {
