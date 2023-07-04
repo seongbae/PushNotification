@@ -125,11 +125,13 @@ abstract class PushChannel
      */
     protected function broadcast()
     {
-        if (function_exists('broadcast')) {
-            broadcast(new NotificationPushed($this->push));
-        } elseif (function_exists('event')) {
-            event(new NotificationPushed($this->push));
-        }
+        // Following is temporarily commented out due to "Serialization of 'Closure' is not allowed" error
+
+//        if (function_exists('broadcast')) {
+//            broadcast(new NotificationPushed($this->push));
+//        } elseif (function_exists('event')) {
+//            event(new NotificationPushed($this->push));
+//        }
     }
 
     /**

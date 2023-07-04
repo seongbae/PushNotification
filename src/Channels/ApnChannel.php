@@ -28,7 +28,9 @@ class ApnChannel extends PushChannel
                 'category' => $message->category,
                 'sound' => $message->sound,
             ],
-            'headers' => []
+            'headers' => [
+                'apns-topic' => 'com.chamberforge.lite'
+            ]
         ];
 
         if (! empty($message->extra)) {
