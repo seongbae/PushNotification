@@ -38,6 +38,14 @@ class ApnChannel extends PushChannel
             $data['aps']['badge'] = $message->badge;
         }
 
+        // Add headers for APNS topic if configured
+        $config = config('pushnotification.apn', []);
+        if (!empty($config['topic'])) {
+            $data['headers'] = [
+                'apns-topic' => $config['topic']
+            ];
+        }
+
         return $data;
     }
 }
